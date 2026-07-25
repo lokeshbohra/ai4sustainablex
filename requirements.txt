@@ -1,0 +1,54 @@
+# ai4sustainablex - Local-First ESG Reporting AI Toolkit
+# Core Backend
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+click>=8.1.7
+rich>=13.9.0
+typer>=0.15.0
+pydantic>=2.10.0
+python-multipart>=0.0.20
+
+# LLM & RAG
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-ollama>=0.2.0
+openai>=1.59.0
+anthropic>=0.42.0
+google-generativeai>=0.8.4
+
+# Vector & Embeddings
+faiss-cpu>=1.9.0
+sentence-transformers>=3.3.0
+rank-bm25>=0.2.2
+whoosh>=2.7.4
+
+# Document Processing
+pypdf>=5.1.0
+python-docx>=1.1.0
+unstructured>=0.16.0
+python-pptx>=1.0.0
+openpyxl>=3.1.0
+
+# Web & Search
+requests>=2.32.0
+httpx>=0.28.0
+duckduckgo-search>=7.5.0
+beautifulsoup4>=4.12.0
+
+# Knowledge Graph
+networkx>=3.4.0
+scikit-learn>=1.6.0
+
+# Report Generation
+weasyprint>=63.0
+markdown>=3.7
+jinja2>=3.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.67.0
+numpy>=2.2.0
+
+# Node.js dependency note:
+# node (optional — for anti-hallucination verification)
