@@ -110,6 +110,46 @@ else
 fi
 echo ""
 
+# ─── Ensure Application Code Is Present ────────────────────────
+# When installed via `curl ... | bash`, only THIS script is streamed.
+# If main.py is missing, we are not inside a repo checkout — download
+# the full application from GitHub so the one-command install works.
+REPO_URL="https://github.com/lokeshbohra/ai4sustainablex"
+
+if [ ! -f "main.py" ]; then
+    echo "📦 ai4sustainablex code not found in the current directory."
+    echo "   Downloading from GitHub: ${REPO_URL}"
+
+    # If the current directory isn't empty, install into a dedicated app dir.
+    if [ -n "$(ls -A . 2>/dev/null)" ]; then
+        APP_DIR="${AI4SX_INSTALL_DIR:-$HOME/ai4sustainablex}"
+        echo ""
+        echo "   Current directory is not empty — installing into: ${APP_DIR}"
+        mkdir -p "${APP_DIR}"
+        cd "${APP_DIR}"
+    fi
+
+    if [ ! -f "main.py" ]; then
+        echo ""
+        if command -v git >/dev/null 2>&1; then
+            echo "   Cloning repository with git..."
+            git clone --depth 1 "${REPO_URL}.git" .
+        else
+            echo "   git not found — downloading source tarball instead..."
+            curl -fsSL "${REPO_URL}/archive/refs/heads/main.tar.gz" | tar -xz --strip-components=1
+        fi
+    fi
+
+    if [ -f "main.py" ]; then
+        echo "✅ Application code downloaded. Resuming install..."
+    else
+        echo ""
+        echo "❌ Could not download application code from: ${REPO_URL}"
+        exit 1
+    fi
+    echo ""
+fi
+
 # ─── Python Virtual Environment ────────────────────────────────
 echo "🐍 Setting up Python virtual environment..."
 cd "$(dirname "$0")" 2>/dev/null || cd "$(pwd)"
