@@ -1,6 +1,6 @@
 """
 ai4sustainablex — Template Registry
-4 FREE templates + 13+ PREMIUM templates ($20 one-time unlock).
+4 FREE templates + 17 PREMIUM templates ($99 one-time unlock).
 All templates require 'companyName' and 'context' variables.
 """
 
@@ -28,7 +28,7 @@ class TemplateRegistry:
     4 FREE templates (always available):
       - esg-report-basic, ghg-emissions, sustainability-brief, sme-readiness
 
-    13+ PREMIUM templates (require $20 payment key):
+    17 PREMIUM templates (require $99 payment key):
       - carbon-footprint, compliance-checklist, gri-full-report, sbcds-targets,
         cdp-disclosure, ifrs-s1-s2, csrd-esrs, csddd-due-diligence, afolu-flag-redd,
         africa-climate-gender, brsr-report, brsr-core-assurance, sme-brsr-lite,
@@ -42,7 +42,7 @@ class TemplateRegistry:
     def _register_all(self) -> None:
         # ─── FREE (4) ────────────────────────────────────────
         self._register_free()
-        # ─── PREMIUM (13+) ────────────────────────────────────
+        # ─── PREMIUM (17) ────────────────────────────────────
         self._register_premium()
 
     def _register_free(self) -> None:
@@ -147,7 +147,7 @@ class TemplateRegistry:
         ))
 
     def _register_premium(self) -> None:
-        """13+ PREMIUM templates — require payment key."""
+        """17 PREMIUM templates — require payment key."""
 
         premium = True
 
