@@ -285,4 +285,13 @@ if [ -n "$OLLAMA_PID" ] && kill -0 $OLLAMA_PID 2>/dev/null; then
     echo "   You can start using ai4sustainablex now — the model will be ready soon."
     echo "   Check: ollama list"
 fi
+
+# ─── Record Install Location (for uninstall.sh) ────────────────
+mkdir -p "${HOME}/.ai4sustainablex"
+echo "install_dir=$(pwd)" > "${HOME}/.ai4sustainablex/install_receipt"
+echo "installed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "${HOME}/.ai4sustainablex/install_receipt"
+echo "✅ Install receipt saved to ~/.ai4sustainablex/install_receipt"
+echo "   To remove later: curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/uninstall.sh | bash"
+echo ""
+
 echo ""

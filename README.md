@@ -180,6 +180,16 @@ python cli.py ask "What are our Scope 1 emissions for 2024?"
 | **Windows (WSL)** | `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh \| bash` |
 | **Windows (PowerShell)** | `irm https://sustainablex.in/install.ps1 \| iex` |
 
+### Uninstall
+
+Run this to completely remove ai4sustainablex (app, data, and config):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/uninstall.sh | bash
+```
+
+It stops the server, deletes the app, the data workspace (`~/ai4sustainablex_workspace`), and config (`~/.ai4sustainablex`), then asks before removing the downloaded Ollama model. Your other files and Ollama models are untouched.
+
 ### What the Installer Does
 
 1. **Detects your OS** (macOS / Linux / Windows)
