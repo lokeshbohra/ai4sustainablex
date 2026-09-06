@@ -135,7 +135,7 @@ async def generate_report(req: ReportRequest):
 
 @app.get("/templates")
 async def list_templates():
-    return {"templates":[{"id":k,"name":v["name"],"framework":v["framework"],"is_premium":False,"accessible":True,"sections_count":len(v["sections"])} for k,v in CORE_TEMPLATES.items()],"counts":{"total":4,"free":4,"premium":0},"note":"13+ premium templates available in the engine. Run: python cli.py unlock"}
+    return {"templates":[{"id":k,"name":v["name"],"framework":v["framework"],"is_premium":False,"accessible":True,"sections_count":len(v["sections"])} for k,v in CORE_TEMPLATES.items()],"counts":{"total":4,"free":4,"premium":0},"note":"Framework Template Library available in the engine. Run: python cli.py unlock"}
 
 @app.get("/templates/{template_id}")
 async def get_template(template_id: str):

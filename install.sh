@@ -1,7 +1,7 @@
 #!/bin/bash
 # ────────────────────────────────────────────────────────────────
 # ai4sustainablex — One-Command Installer (curl | bash)
-# Local-First AI Toolkit for ESG & Sustainability Reporting
+# ESG drafts from your documents — cited, gap-flagged, local
 # https://sustainablex.in  |  info@sustainablex.in
 # ────────────────────────────────────────────────────────────────
 set -e
@@ -12,7 +12,7 @@ echo "╔═══════════════════════�
 echo "║                                                              ║"
 echo "║        🌱  ai4sustainablex  —  Installer                    ║"
 echo "║                                                              ║"
-echo "║   Local-First AI Toolkit for ESG & Sustainability Reporting  ║"
+echo "║   ESG drafts from your documents — cited, gap-flagged, local  ║"
 echo "║   https://sustainablex.in                                    ║"
 echo "║   info@sustainablex.in                                       ║"
 echo "║                                                              ║"

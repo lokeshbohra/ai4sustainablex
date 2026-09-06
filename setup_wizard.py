@@ -37,7 +37,7 @@ class SetupWizard:
 ║                                                              ║
 ║        🌱  ai4sustainablex  —  Setup & Onboarding           ║
 ║                                                              ║
-║   Local-First AI Toolkit for ESG & Sustainability Reporting  ║
+║   ESG drafts from your documents — cited, gap-flagged, local  ║
 ║   https://sustainablex.in                                    ║
 ║   info@sustainablex.in                                       ║
 ║                                                              ║
@@ -100,7 +100,7 @@ following terms:
    tool, NOT a substitute for professional ESG consulting.
 
 9. INTELLECTUAL PROPERTY
-   ai4sustainablex is licensed under [GPL-3.0]. SustainableX 
+   ai4sustainablex is licensed under [BUSL-1.1]. SustainableX 
    retains rights to the name, branding, and template library.
 
 10. GOVERNING LAW

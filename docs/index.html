@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ai4sustainablex — ESG drafts from your own documents</title>
+<meta name="description" content="Draft ESG reports from your own documents. Every claim cited, every gap flagged, nothing uploaded. Free to start; SustainableX Validation for board-ready rigor.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a3a2a;
+    --mid: #2c5f2d;
+    --light: #4a9c5d;
+    --accent: #3a7d44;
+    --bg: #f8faf8;
+    --card: #ffffff;
+    --muted: #5c6b60;
+    --border: #dde7dd;
+    --warn: #9a5b12;
+    --warnbg: #fdf3e3;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: #16241c;
+    background:
+      radial-gradient(1200px 600px at 85% -5%, rgba(74,156,93,.14), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(42,95,45,.10), transparent 55%),
+      var(--bg);
+    line-height: 1.7;
+  }
+  .display { font-family: "Fraunces", Georgia, serif; letter-spacing: -0.03em; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(26,58,42,.05), 0 18px 40px -22px rgba(26,58,42,.25);
+    transition: transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease, opacity .18s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(26,58,42,.07), 0 26px 48px -24px rgba(26,58,42,.35); }
+  .card a, a.card { display: block; }
+  .pill { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+  .btn { transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  code, .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .copycode { background:#0f2017; color:#d7f2dc; border-radius:12px; }
+  .step-num { font-family:"Fraunces", serif; font-size:1.4rem; color:var(--light); font-weight:600; }
+  .warn { background: var(--warnbg); border:1px solid #ecd9b3; color: var(--warn); }
+  footer a, nav a { transition: opacity .15s ease; }
+  footer a:hover, nav a:hover { opacity:.75; }
+  ::selection { background: rgba(74,156,93,.28); }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="sticky top-0 z-20 backdrop-blur bg-[#f8faf8]/85 border-b border-[#dde7dd]">
+  <div class="wrap flex items-center justify-between py-3.5">
+    <a href="#" class="flex items-center gap-2 font-semibold text-[#1a3a2a]">
+      <span aria-hidden="true">🌱</span> ai4sustainablex
+    </a>
+    <div class="flex items-center gap-5 text-sm text-[#5c6b60]">
+      <a href="#how">How it works</a>
+      <a href="#output">See output</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://github.com/lokeshbohra/ai4sustainablex" class="btn rounded-full bg-[#1a3a2a] text-white px-4 py-1.5 text-[13px] shadow-[0_10px_24px_-12px_rgba(26,58,42,.8)]">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="pt-20 pb-16 md:pt-28 md:pb-20">
+  <div class="wrap text-center max-w-3xl mx-auto">
+    <span class="pill inline-block px-3 py-1 rounded-full bg-[#2c5f2d]/10 text-[#2c5f2d] font-semibold mb-6">Local-first · free to start · SustainableX Validation on top</span>
+    <h1 class="display text-4xl md:text-6xl font-semibold text-[#1a3a2a] leading-[1.05]">
+      ESG report drafts from your own documents.
+    </h1>
+    <p class="mt-6 text-lg md:text-xl text-[#5c6b60]">
+      Point it at your ESG folder → get a structured, framework-aligned first draft.
+      Every claim carries a citation to your source file. Every data gap is flagged — not guessed.
+      <strong class="text-[#1a3a2a] font-semibold">Nothing leaves your machine.</strong>
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <button onclick="copyInstall()" class="btn rounded-full bg-[#2c5f2d] text-white px-6 py-3 font-semibold shadow-[0_18px_36px_-16px_rgba(44,95,45,.9)]">Copy install command</button>
+      <a href="#output" class="btn rounded-full border border-[#2c5f2d] text-[#2c5f2d] px-6 py-3 font-semibold">See a sample output</a>
+    </div>
+    <div class="copycode mt-6 text-left text-[13px] overflow-x-auto p-4">
+      <span class="text-[#4a9c5d]">$</span> curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh | bash
+    </div>
+    <p class="mt-4 text-sm text-[#7c8a80]" id="install-hint">Install in one command (~3–5 min, macOS / Linux / WSL). Draft on a real folder in 10 minutes.</p>
+  </div>
+</header>
+
+<!-- How it works -->
+<section id="how" class="py-16 md:py-20">
+  <div class="wrap">
+    <p class="pill text-[#2c5f2d] font-semibold mb-3">How it works</p>
+    <h2 class="display text-3xl md:text-4xl font-semibold text-[#1a3a2a]">Four steps to a draft with receipts</h2>
+    <div class="mt-10 grid md:grid-cols-2 gap-5">
+      <div class="card p-6"><div class="step-num">1</div><h3 class="font-semibold text-lg mt-2 text-[#1a3a2a]">Point it at a folder</h3><p class="text-[#5c6b60] mt-1">Your PDFs, DOCX, spreadsheets, slides. Only the folder you choose — nothing outside it.</p></div>
+      <div class="card p-6"><div class="step-num">2</div><h3 class="font-semibold text-lg mt-2 text-[#1a3a2a]">It indexes locally</h3><p class="text-[#5c6b60] mt-1">Documents are chunked and embedded on your machine. No upload, no cloud index.</p></div>
+      <div class="card p-6"><div class="step-num">3</div><h3 class="font-semibold text-lg mt-2 text-[#1a3a2a]">Ask or scaffold</h3><p class="text-[#5c6b60] mt-1">Ask questions against your own files, or pick a structure: Basic ESG, GHG emissions, compliance checklist, and more.</p></div>
+      <div class="card p-6"><div class="step-num">4</div><h3 class="font-semibold text-lg mt-2 text-[#1a3a2a]">Get a draft with receipts</h3><p class="text-[#5c6b60] mt-1">Every claim cited to a file + page. Every gap flagged in place. A grounding score shows how much is backed by your documents.</p></div>
+    </div>
+    <div class="warn rounded-2xl p-5 mt-8 text-sm">
+      <strong>Then it's your call — not our lock-in:</strong> DIY-refine the draft for free, forever.
+      Or when a regulator or board is the audience, add <strong>SustainableX Validation</strong>: claim-level
+      confidence scoring, ESRS / IFRS S1/S2 data-point checks, peer benchmarking, and a consultant
+      redline with methodology notes.
+    </div>
+  </div>
+</section>
+
+<!-- Proof / output -->
+<section id="output" class="py-16 md:py-20 bg-[#ffffff]/60 border-y border-[#dde7dd]">
+  <div class="wrap">
+    <p class="pill text-[#2c5f2d] font-semibold mb-3">Proof, before you install</p>
+    <h2 class="display text-3xl md:text-4xl font-semibold text-[#1a3a2a]">See the output first</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <a class="card p-6" href="https://github.com/lokeshbohra/ai4sustainablex/blob/main/examples/sample-esg-report.md" target="_blank" rel="noopener">
+        <div class="text-2xl">📄</div><h3 class="font-semibold mt-3 text-[#1a3a2a]">Basic ESG report</h3>
+        <p class="text-[#5c6b60] mt-1 text-sm">A structured first draft with per-claim citations and inline gap flags. Every supported claim points at a source file + page.</p>
+      </a>
+      <a class="card p-6" href="https://github.com/lokeshbohra/ai4sustainablex/blob/main/examples/gap-flags-and-verdicts.md" target="_blank" rel="noopener">
+        <div class="text-2xl">🚩</div><h3 class="font-semibold mt-3 text-[#1a3a2a]">What the engine flagged</h3>
+        <p class="text-[#5c6b60] mt-1 text-sm">The "insufficient data" notes and claim-level verdicts (highly_reliable → unreliable) that ship inside every draft. This is what anti-hallucination means.</p>
+      </a>
+      <a class="card p-6" href="https://github.com/lokeshbohra/ai4sustainablex/blob/main/examples/consultant-redline.md" target="_blank" rel="noopener">
+        <div class="text-2xl">✍️</div><h3 class="font-semibold mt-3 text-[#1a3a2a]">The consultant redline</h3>
+        <p class="text-[#5c6b60] mt-1 text-sm">What a human ESG consultant would change before a draft reaches a board — with severity levels and the "why" behind each edit.</p>
+      </a>
+    </div>
+    <p class="text-sm text-[#7c8a80] mt-6">Sample drafts use a fictional company. Run the tool on your own folder and compare.</p>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="py-16 md:py-20">
+  <div class="wrap">
+    <p class="pill text-[#2c5f2d] font-semibold mb-3">Pricing</p>
+    <h2 class="display text-3xl md:text-4xl font-semibold text-[#1a3a2a]">Free tier proves we solve it. Validation is for when regulators care.</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-5 items-stretch">
+      <div class="card p-7 flex flex-col">
+        <h3 class="font-semibold text-lg text-[#1a3a2a]">Draft</h3>
+        <p class="text-3xl display font-semibold text-[#1a3a2a] mt-1">$0</p>
+        <p class="text-sm text-[#5c6b60] mt-1 mb-4">A complete workflow, forever.</p>
+        <ul class="text-sm text-[#46574c] space-y-2 flex-1">
+          <li>✓ 4 core templates (Basic ESG, GHG, Brief, SME)</li>
+          <li>✓ Citations + gap flags + grounding score</li>
+          <li>✓ Search &amp; Q&amp;A against your files</li>
+          <li>✓ Local (Ollama) or BYO-LLM</li>
+        </ul>
+      </div>
+      <div class="card p-7 flex flex-col">
+        <h3 class="font-semibold text-lg text-[#1a3a2a]">Framework Template Library</h3>
+        <p class="text-3xl display font-semibold text-[#1a3a2a] mt-1">$99 <span class="text-base font-normal text-[#7c8a80]">one-time</span></p>
+        <p class="text-sm text-[#5c6b60] mt-1 mb-4">Every scaffold the tool can build.</p>
+        <ul class="text-sm text-[#46574c] space-y-2 flex-1">
+          <li>✓ GRI 2021 · SBTi · CDP · IFRS S1/S2 · CSRD/ESRS · CSDDD · BRSR</li>
+          <li>✓ AFOLU/FLAG/REDD+ · Africa Climate-Gender · task outputs</li>
+          <li>✓ Compliance checklist · carbon footprint</li>
+          <li>✓ Claims verifier + knowledge graph</li>
+        </ul>
+      </div>
+      <div class="card p-7 flex flex-col shadow-[0_4px_10px_rgba(26,58,42,.06),0_30px_60px_-28px_rgba(26,58,42,.5)]">
+        <span class="pill self-start px-2.5 py-0.5 rounded-full bg-[#1a3a2a] text-white mb-2">When it must hold up</span>
+        <h3 class="font-semibold text-lg text-[#1a3a2a]">SustainableX Validation</h3>
+        <p class="text-3xl display font-semibold text-[#1a3a2a] mt-1">from $500<span class="text-base font-normal text-[#7c8a80]">/report · or $200/mo</span></p>
+        <p class="text-sm text-[#5c6b60] mt-1 mb-4">Human + regulatory layer on your draft.</p>
+        <ul class="text-sm text-[#46574c] space-y-2 flex-1">
+          <li>✓ Claim-level confidence scoring</li>
+          <li>✓ ESRS / IFRS S1/S2 data-point checks</li>
+          <li>✓ Peer benchmarking</li>
+          <li>✓ Consultant redline with methodology notes</li>
+        </ul>
+        <a href="mailto:info@sustainablex.in?subject=SustainableX%20Validation" class="btn mt-5 rounded-full bg-[#1a3a2a] text-white text-center px-5 py-2.5 text-sm font-semibold">Email for a sample review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="py-16 md:py-20 bg-[#ffffff]/60 border-y border-[#dde7dd]">
+  <div class="wrap max-w-3xl">
+    <p class="pill text-[#2c5f2d] font-semibold mb-3">Trust &amp; privacy</p>
+    <h2 class="display text-3xl md:text-4xl font-semibold text-[#1a3a2a]">What we deliberately don't fake</h2>
+    <ul class="mt-8 space-y-4 text-[#46574c]">
+      <li class="flex gap-3"><span aria-hidden="true">🚩</span><span><strong>"Insufficient data" is a feature.</strong> If the number isn't in your documents, the draft says so and logs it as a gap — it never invents one to look complete.</span></li>
+      <li class="flex gap-3"><span aria-hidden="true">🔖</span><span><strong>Every claim is traceable.</strong> File + page citations on supported claims; severity flags on unsupported ones.</span></li>
+      <li class="flex gap-3"><span aria-hidden="true">🔒</span><span><strong>Nothing uploaded.</strong> Indexing, search, and default generation run on your machine. Cloud LLMs are optional and opt-in.</span></li>
+      <li class="flex gap-3"><span aria-hidden="true">🩺</span><span><strong>Drafts are drafts.</strong> The grounding score tells you what needs a human eye. Free drafts are not assurance-ready — that's what Validation exists for.</span></li>
+    </ul>
+    <p class="text-sm text-[#7c8a80] mt-6">Read the full <a class="underline decoration-[#4a9c5d] decoration-2 underline-offset-2" href="https://github.com/lokeshbohra/ai4sustainablex/blob/main/DISCLAIMER.md">disclaimer</a> and <a class="underline decoration-[#4a9c5d] decoration-2 underline-offset-2" href="https://github.com/lokeshbohra/ai4sustainablex/blob/main/COMMERCIAL.md">commercial terms</a> on GitHub.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10">
+  <div class="wrap flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#5c6b60]">
+    <span>🌱 ai4sustainablex — <em>Drafts from your documents. Every claim cited. Every gap flagged.</em></span>
+    <div class="flex gap-5">
+      <a href="https://sustainablex.in">Website</a>
+      <a href="mailto:info@sustainablex.in">Contact</a>
+      <a href="https://github.com/lokeshbohra/ai4sustainablex/issues">Issues</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyInstall() {
+  const cmd = "curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh | bash";
+  const hint = document.getElementById("install-hint");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(cmd).then(() => {
+      hint.textContent = "Copied ✓ Paste it into your terminal and hit Enter.";
+      setTimeout(() => { hint.textContent = "Install in one command (~3–5 min, macOS / Linux / WSL). Draft on a real folder in 10 minutes."; }, 4000);
+    }).catch(() => fallbackCopy(cmd, hint));
+  } else { fallbackCopy(cmd, hint); }
+}
+function fallbackCopy(cmd, hint) {
+  const t = document.createElement("textarea");
+  t.value = cmd; document.body.appendChild(t); t.select();
+  try { document.execCommand("copy"); hint.textContent = "Copied ✓ Paste it into your terminal and hit Enter."; }
+  catch (e) { window.prompt("Copy the install command:", cmd); }
+  document.body.removeChild(t);
+}
+</script>
+</body>
+</html>

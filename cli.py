@@ -23,7 +23,7 @@ BRAND_FOOTER = """
 Built for ESG practitioners. Data stays on your machine.
 """
 
-PREMIUM_NOTE = "\n🔒 Premium feature. Run 'python cli.py unlock' or contact info@sustainablex.in\n"
+PREMIUM_NOTE = "\n🔒 Framework Template Library. Run 'python cli.py unlock' or see COMMERCIAL.md.\n"
 
 def _ensure_server():
     try:
@@ -47,7 +47,7 @@ def _ensure_server():
 @click.group()
 @click.version_option(version="1.0.0", prog_name="ai4sustainablex")
 def cli():
-    """🌱 ai4sustainablex — Local-First AI Toolkit for ESG & Sustainability Reporting."""
+    """🌱 ai4sustainablex — ESG drafts from your documents — cited, gap-flagged, local."""
 
 @cli.command()
 def setup():
@@ -245,13 +245,19 @@ def ui():
 @click.option("--key","-k", default=None)
 def unlock(key):
     click.echo("""
-🔒 Premium Template Unlock ($99 one-time)
+🔒 Framework Template Library — $99 one-time
 
-Unlock 13+ premium templates (GRI, SBTi, CDP, IFRS S1/S2, CSRD, CSDDD,
-AFOLU/FLAG, REDD+, Africa-Climate, BRSR, social media, newsletters, disclosures).
+Unlocks the full framework library: GRI 2021, SBTi, CDP, IFRS S1/S2,
+CSRD/ESRS, CSDDD (+ supply chain), AFOLU/FLAG/REDD+, BRSR,
+Africa Climate-Gender, compliance checklist, carbon footprint,
+and task outputs (social posts, newsletters, disclosures).
+
+Need board-ready rigor? Add SustainableX Validation (from $500/report
+or $200/mo) — claim-level confidence scoring + expert redline.
+See COMMERCIAL.md.
 
 📧 Email: info@sustainablex.in
-Subject: AI4SX Premium Unlock
+Subject: AI4SX Template Library Unlock
 
 You will receive a payment key within 24 hours.
 """)

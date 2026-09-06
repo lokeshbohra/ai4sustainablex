@@ -53,7 +53,7 @@ Report templates provide structural guidance and prompts for ESG frameworks. The
 
 ## 8. Intellectual Property
 
-ai4sustainablex source code is licensed under GPL-3.0. SustainableX retains all rights to the name "ai4sustainablex", branding assets, the SustainableX website (sustainablex.in), and the premium template library accessible via the SustainableX API.
+ai4sustainablex source code is licensed under the Business Source License 1.1 (BUSL-1.1) — free for personal, internal research, and internal corporate ESG reporting — converting to Apache License 2.0 on July 25, 2030. SustainableX retains all rights to the name "ai4sustainablex", branding assets, the SustainableX website (sustainablex.in), the Template Library, and the Validation service accessible via the SustainableX API.
 
 ## 9. Data Privacy
 
