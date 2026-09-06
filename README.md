@@ -67,7 +67,7 @@ It's built for ESG practitioners who need to search, analyze, and generate susta
 | 📄 **Multi-Format Output** | Markdown, PDF (WeasyPrint), DOCX (python-docx) |
 | 🖥️ **Desktop GUI** | Optional Electron-based graphical interface for non-CLI users |
 | 🏠 **100% Local-First** | All processing, indexing, and inference on your machine (with Ollama) |
-| ⚡ **One-Command Install** | `curl -fsSL https://sustainablex.in/install.sh | bash` |
+| ⚡ **One-Command Install** | `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh | bash` |
 
 ---
 
@@ -76,7 +76,7 @@ It's built for ESG practitioners who need to search, analyze, and generate susta
 ### Option A: One-Command Install (Recommended)
 
 ```bash
-curl -fsSL https://sustainablex.in/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh | bash
 ```
 
 The installer auto-detects your OS, installs Ollama, pulls the default model (llama3.2:1b), sets up Python, and starts the backend server. Takes 3-5 minutes.
@@ -175,9 +175,9 @@ python cli.py ask "What are our Scope 1 emissions for 2024?"
 
 | Platform | Command |
 |----------|---------|
-| **macOS** | `curl -fsSL https://sustainablex.in/install.sh \| bash` |
-| **Linux** | `curl -fsSL https://sustainablex.in/install.sh \| bash` |
-| **Windows (WSL)** | `curl -fsSL https://sustainablex.in/install.sh \| bash` |
+| **macOS** | `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh \| bash` |
+| **Linux** | `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh \| bash` |
+| **Windows (WSL)** | `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh \| bash` |
 | **Windows (PowerShell)** | `irm https://sustainablex.in/install.ps1 \| iex` |
 
 ### What the Installer Does
@@ -515,7 +515,7 @@ A: `llama3.2:1b` (~1.3GB). It's fast, runs on CPU, and handles ESG reporting tas
 A: Yes. Create an Ollama Modelfile pointing to your GGUF file and run `ollama create my-model -f Modelfile`. Then switch: `python cli.py providers switch ollama -m my-model`
 
 **Q: How do I update ai4sustainablex?**
-A: Re-run the installer: `curl -fsSL https://sustainablex.in/install.sh | bash`. Or pull the latest from GitHub and run `pip install -r requirements.txt --upgrade`.
+A: Re-run the installer: `curl -fsSL https://raw.githubusercontent.com/lokeshbohra/ai4sustainablex/main/install.sh | bash`. Or pull the latest from GitHub and run `pip install -r requirements.txt --upgrade`.
 
 **Q: How do I get the premium templates?**
 A: Get an API key at https://sustainablex.in and configure it during setup or export `SUSTAINABLEX_API_KEY`.
